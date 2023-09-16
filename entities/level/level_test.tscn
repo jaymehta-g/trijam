@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://5n1stn6qyhua"]
+
+[ext_resource type="PackedScene" uid="uid://bvsmh71fnnusw" path="res://entities/level/objects/wall/wall.tscn" id="1_y8lpy"]
+[ext_resource type="PackedScene" uid="uid://85v4ltj8q8kv" path="res://entities/level/objects/bumper/bumper.tscn" id="2_l70v2"]
+
+[node name="level_test" type="Node2D"]
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(-160, 192, 96, 224)
+
+[node name="Wall6" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(768, 576, 96, 224)
+
+[node name="Wall7" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(768, 576, 864, 768)
+
+[node name="Wall8" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(800, 960, 864, 768)
+
+[node name="Wall9" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(800, 960, 576, 992)
+
+[node name="Wall15" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(-384, 96, 576, 992)
+
+[node name="Wall17" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(-384, 96, -384, -384)
+
+[node name="Wall19" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(-960, -576, -384, -384)
+
+[node name="Wall2" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(-160, 192, -352, -224)
+
+[node name="Wall3" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(64, -384, -352, -224)
+
+[node name="Wall4" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(64, -384, 416, -192)
+
+[node name="Wall5" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(1664, 480, 416, -192)
+
+[node name="Wall10" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(1664, 480, 1728, 832)
+
+[node name="Wall11" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(1600, 1088, 1728, 832)
+
+[node name="Wall12" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(1600, 1088, 704, 1408)
+
+[node name="Wall14" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(-160, 1344, 704, 1408)
+
+[node name="Wall13" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(-160, 1344, -992, 416)
+
+[node name="Wall16" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(-1280, 416, -992, 416)
+
+[node name="Wall18" parent="Walls" instance=ExtResource("1_y8lpy")]
+points = PackedVector2Array(-1280, 416, -1472, -192)
+
+[node name="Bumper" parent="." instance=ExtResource("2_l70v2")]
+position = Vector2(-672, 256)
+
+[node name="Bumper2" parent="." instance=ExtResource("2_l70v2")]
+position = Vector2(-1120, -64)
+
+[node name="Bumper3" parent="." instance=ExtResource("2_l70v2")]
+position = Vector2(-832, -256)

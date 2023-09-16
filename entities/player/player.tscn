@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://ceelebphkewc0"]
+
+[ext_resource type="Script" path="res://entities/player/player.gd" id="1_md15c"]
+[ext_resource type="Material" uid="uid://cfiqh3k0liism" path="res://entities/player/boost_particles.tres" id="2_i76if"]
+[ext_resource type="Texture2D" uid="uid://vts6yjw0074j" path="res://entities/player/smoke_07.png" id="3_xtotg"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m4gtm"]
+friction = 0.0
+bounce = 0.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ctv47"]
+radius = 50.0
+
+[node name="Player" type="RigidBody2D" groups=["Player"]]
+mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_m4gtm")
+gravity_scale = 0.0
+angular_damp = 10.0
+script = ExtResource("1_md15c")
+accel = 200.0
+turn_speed = 8000.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 80
+process_material = ExtResource("2_i76if")
+texture = ExtResource("3_xtotg")
+lifetime = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ctv47")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(64, 0, -64, -64, -40, 0, -64, 64)
