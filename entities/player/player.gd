@@ -8,6 +8,8 @@ class_name Player
 
 var checkpoint := Vector2.ZERO
 
+var first_input_made := false
+
 var boosting : bool :
 	get:
 		return Input.is_action_pressed("boost") and Globals.game.fuel >= 0
@@ -33,6 +35,11 @@ func _physics_process(_delta: float) -> void:
 		position = checkpoint
 		rotation = 0
 		SignalBus.reset.emit()
+	
+	# start timer on first boost input
+	if not first_input_made and boosting:
+		SignalBus.first_input_made.emit()
+		first_input_made = true
 	
 	#juice
 	if boosting:
