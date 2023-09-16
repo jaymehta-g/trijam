@@ -3,6 +3,7 @@ extends Area2D
 @onready var reset_timer: Timer = $"Reset Timer"
 @export var bounce_force := 20.0
 @onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 var disabled := false
 
 func _on_body_entered(body: Node2D) -> void:
@@ -19,7 +20,9 @@ func _on_body_entered(body: Node2D) -> void:
 	disabled = true
 	reset_timer.start()
 	# juice
+	animation_player.play("bounce")
 	gpu_particles_2d.emitting = true
 
 func _on_reset_timer_timeout() -> void:
 	disabled = false
+	animation_player.play("reset")

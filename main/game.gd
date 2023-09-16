@@ -9,8 +9,10 @@ func _ready() -> void:
 	SignalBus.fuel_pickup_used.connect(func():
 		fuel = max_fuel
 		)
+	SignalBus.reset.connect(func():
+		fuel = max_fuel		
+	)
 
 func _process(delta: float) -> void:
 	if Globals.player.boosting:
 		fuel -= delta
-		print_debug(fuel)

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://84u8a1wjwvmt"]
+[gd_scene load_steps=7 format=3 uid="uid://84u8a1wjwvmt"]
 
 [ext_resource type="Script" path="res://entities/level/level.gd" id="1_sv087"]
 [ext_resource type="PackedScene" uid="uid://bvsmh71fnnusw" path="res://entities/level/objects/wall/wall.tscn" id="2_vovmp"]
 [ext_resource type="PackedScene" uid="uid://85v4ltj8q8kv" path="res://entities/level/objects/bumper/bumper.tscn" id="3_hxa36"]
 [ext_resource type="PackedScene" uid="uid://g5jofyngjvaf" path="res://entities/level/objects/pickup/fuel_pickup.tscn" id="3_i6cxn"]
+[ext_resource type="PackedScene" uid="uid://sr47v3ienfdu" path="res://entities/level/objects/checkpoint/checkpoint.tscn" id="5_kfq0n"]
+[ext_resource type="PackedScene" uid="uid://cr18drsouii8x" path="res://entities/level/objects/end flag/end_flag.tscn" id="6_ow5fu"]
 
 [node name="Level 1" type="Node2D"]
 script = ExtResource("1_sv087")
@@ -19,6 +21,21 @@ points = PackedVector2Array(672, -512, 896, -256)
 [node name="Wall4" parent="Walls" instance=ExtResource("2_vovmp")]
 points = PackedVector2Array(1536, 768, 1536, -256)
 
+[node name="Wall47" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(1792, 1792, 1792, 1280)
+
+[node name="Wall13" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(3328, 0, 1536, 0)
+
+[node name="Wall46" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(2560, 0, 2560, 768)
+
+[node name="Wall15" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(3328, 0, 3584, -256)
+
+[node name="Wall16" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(5888, -256, 3584, -256)
+
 [node name="Wall5" parent="Walls" instance=ExtResource("2_vovmp")]
 points = PackedVector2Array(1536, 768, -256, 768)
 
@@ -26,13 +43,148 @@ points = PackedVector2Array(1536, 768, -256, 768)
 points = PackedVector2Array(-768, 256, -256, 768)
 
 [node name="Wall7" parent="Walls" instance=ExtResource("2_vovmp")]
-points = PackedVector2Array(-768, 256, -768, -768)
+points = PackedVector2Array(-768, 256, -768, -1664)
 
 [node name="Wall8" parent="Walls" instance=ExtResource("2_vovmp")]
 points = PackedVector2Array(1536, -768, -768, -768)
 
 [node name="Wall11" parent="Walls" instance=ExtResource("2_vovmp")]
 points = PackedVector2Array(1536, -768, 1536, -512)
+
+[node name="Wall12" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(1536, -768, 3328, -768)
+
+[node name="Wall14" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(3584, -512, 3328, -768)
+
+[node name="Wall32" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(3328, -1792, 3328, -768)
+
+[node name="Wall33" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(3328, -1792, 3840, -2304)
+
+[node name="Wall54" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(7168, -2304, 3840, -2304)
+
+[node name="Wall52" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(3456, -3072, 3840, -2688)
+
+[node name="Wall53" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(7168, -2688, 3840, -2688)
+
+[node name="Wall34" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(7424, -2048, 3584, -2048)
+
+[node name="Wall17" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(3584, -512, 5888, -512)
+
+[node name="Wall18" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(6144, -512, 5888, -512)
+
+[node name="Wall19" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(6144, -512, 6400, -256)
+
+[node name="Wall20" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(6144, 0, 6400, -256)
+
+[node name="Wall21" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(6144, 0, 5888, 0)
+
+[node name="Wall22" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(5632, -256, 4736, 640)
+
+[node name="Wall23" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(5632, 256, 5376, 0)
+
+[node name="Wall24" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(5632, 256, 6400, 256)
+
+[node name="Wall25" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(6912, -256, 6400, 256)
+
+[node name="Wall26" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(6400, -1280, 6400, -256)
+
+[node name="Wall27" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(6912, -1280, 6912, -256)
+
+[node name="Wall28" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(6912, -1280, 6656, -1536)
+
+[node name="Wall35" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(7424, -2048, 7424, -1536)
+
+[node name="Wall55" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(7168, -2304, 7424, -2048)
+
+[node name="Wall56" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(7680, -2048, 7424, -2048)
+
+[node name="Wall57" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(7680, -2048, 7936, -2304)
+
+[node name="Wall58" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(7936, -2688, 7936, -2304)
+
+[node name="Wall59" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(7936, -2688, 7680, -2944)
+
+[node name="Wall60" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(7424, -2944, 7680, -2944)
+
+[node name="Wall61" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(7424, -2944, 7168, -2688)
+
+[node name="Wall36" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(7168, -1536, 7424, -1536)
+
+[node name="Wall37" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(7168, -1536, 7168, 1792)
+
+[node name="Wall38" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(6656, 2304, 7168, 1792)
+
+[node name="Wall39" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(6656, 2304, 5376, 2304)
+
+[node name="Wall40" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(4864, 1792, 5376, 2304)
+
+[node name="Wall42" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(4864, 1792, 4864, 1280)
+
+[node name="Wall44" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(4864, 1792, -256, 1792)
+
+[node name="Wall48" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(-1792, 256, -256, 1792)
+
+[node name="Wall49" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(-1792, 256, -1792, -2048)
+
+[node name="Wall50" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(-768, -3072, 3456, -3072)
+
+[node name="Wall51" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(-768, -3072, -1792, -2048)
+
+[node name="Wall45" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(3968, 896, 3072, 1792)
+
+[node name="Wall43" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(5120, 1024, 4864, 1280)
+
+[node name="Wall41" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(5888, 1792, 5888, 256)
+
+[node name="Wall29" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(6144, -1536, 6656, -1536)
+
+[node name="Wall30" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(6144, -1536, 6144, -1280)
+
+[node name="Wall31" parent="Walls" instance=ExtResource("2_vovmp")]
+points = PackedVector2Array(4096, -1280, 6144, -1280)
 
 [node name="Wall9" parent="Walls" instance=ExtResource("2_vovmp")]
 points = PackedVector2Array(0, -512, 0, -256)
@@ -52,5 +204,143 @@ position = Vector2(320, -640)
 [node name="Bumper3" parent="." instance=ExtResource("3_hxa36")]
 position = Vector2(1152, -640)
 
+[node name="Bumper29" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(896, -2688)
+
+[node name="Bumper30" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(640, -2560)
+
+[node name="Bumper31" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(512, -2304)
+
+[node name="Bumper32" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(640, -2048)
+
+[node name="Bumper33" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(896, -1920)
+
+[node name="Bumper34" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(1152, -2048)
+
+[node name="Bumper35" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(1280, -2304)
+
+[node name="Bumper36" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(1152, -2560)
+
+[node name="Bumper37" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(2432, -1920)
+
+[node name="Bumper38" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(2176, -1792)
+
+[node name="Bumper39" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(2048, -1536)
+
+[node name="Bumper40" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(2176, -1280)
+
+[node name="Bumper41" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(2432, -1152)
+
+[node name="Bumper42" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(2688, -1280)
+
+[node name="Bumper43" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(2816, -1536)
+
+[node name="Bumper44" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(2688, -1792)
+
+[node name="Bumper4" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(1920, -384)
+
+[node name="Bumper5" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(2304, -128)
+
+[node name="Bumper6" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(2304, -640)
+
+[node name="Bumper10" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(2688, -384)
+
+[node name="Bumper11" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(3072, -128)
+
+[node name="Bumper12" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(3072, -640)
+
 [node name="Fuel Pickup" parent="." instance=ExtResource("3_i6cxn")]
 position = Vector2(1507, -383)
+
+[node name="Checkpoint" parent="." instance=ExtResource("5_kfq0n")]
+position = Vector2(5824, -384)
+
+[node name="Bumper7" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(6496, -320)
+
+[node name="Bumper17" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(3840, 1152)
+
+[node name="Bumper23" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(2560, 1152)
+
+[node name="Bumper26" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(1792, 896)
+
+[node name="Bumper27" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(1920, 768)
+
+[node name="Bumper28" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(2048, 640)
+
+[node name="Bumper24" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(2560, 1408)
+
+[node name="Bumper25" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(2560, 1664)
+
+[node name="Bumper20" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(4480, 0)
+
+[node name="Bumper21" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(4480, 256)
+
+[node name="Bumper22" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(4736, 384)
+
+[node name="Bumper18" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(3968, 1408)
+
+[node name="Bumper19" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(3968, 1664)
+
+[node name="Bumper8" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(6816, -1216)
+
+[node name="Bumper14" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(7296, -1920)
+
+[node name="Bumper15" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(7296, -1792)
+
+[node name="Bumper16" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(7296, -1664)
+
+[node name="Bumper9" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(6272, -1280)
+
+[node name="Bumper13" parent="." instance=ExtResource("3_hxa36")]
+position = Vector2(6272, -640)
+
+[node name="Fuel Pickup2" parent="." instance=ExtResource("3_i6cxn")]
+position = Vector2(7040, -256)
+
+[node name="Checkpoint2" parent="." instance=ExtResource("5_kfq0n")]
+position = Vector2(1536, 1152)
+
+[node name="Fuel Pickup3" parent="." instance=ExtResource("3_i6cxn")]
+position = Vector2(3838, -2497)
+
+[node name="End Flag" parent="." instance=ExtResource("6_ow5fu")]
+position = Vector2(7552, -2496)

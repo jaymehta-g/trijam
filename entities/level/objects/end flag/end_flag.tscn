@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr18drsouii8x"]
+
+[ext_resource type="PackedScene" uid="uid://sr47v3ienfdu" path="res://entities/level/objects/checkpoint/checkpoint.tscn" id="1_jj36w"]
+[ext_resource type="Script" path="res://entities/level/objects/end flag/end_flag.gd" id="2_gqpaj"]
+
+[node name="End Flag" instance=ExtResource("1_jj36w")]
+script = ExtResource("2_gqpaj")
+
+[node name="FlagSquare" parent="." index="0"]
+modulate = Color(1, 0.984314, 0.541176, 1)
+
+[node name="CollisionShape2D" parent="." index="2"]
+debug_color = Color(0, 0.6, 0.701961, 0)

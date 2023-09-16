@@ -6,6 +6,8 @@ class_name Player
 @export var turn_speed := 2.0
 @onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 
+var checkpoint := Vector2.ZERO
+
 var boosting : bool :
 	get:
 		return Input.is_action_pressed("boost") and Globals.game.fuel >= 0
@@ -24,11 +26,13 @@ func _physics_process(_delta: float) -> void:
 		var boost_amount = (Vector2.RIGHT*accel).rotated(rotation)
 		apply_force(boost_amount)
 	
-	# fuel signals
-#	if Input.is_action_just_pressed("boost"):
-#		SignalBus.boost_start.emit()
-#	if Input.is_action_just_released("boost"):
-#		SignalBus.boost_stop.emit()
+	# reset to checkpoint
+	if Input.is_action_just_pressed(&"reset"):
+		linear_velocity = Vector2.ZERO
+		angular_velocity = 0
+		position = checkpoint
+		rotation = 0
+		SignalBus.reset.emit()
 	
 	#juice
 	if boosting:

@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://sr47v3ienfdu"]
+
+[ext_resource type="Texture2D" uid="uid://ck86caknkwbui" path="res://entities/level/objects/checkpoint/flag_square.png" id="1_bw02k"]
+[ext_resource type="Script" path="res://entities/level/objects/checkpoint/checkpoint.gd" id="1_wrmht"]
+
+[sub_resource type="Animation" id="Animation_ncufe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlagSquare:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.14, 2.14)]
+}
+
+[sub_resource type="Animation" id="Animation_4fh1u"]
+resource_name = "bounce"
+length = 2.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlagSquare:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.14, 2.14), Vector2(2.565, 2.565)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qv4d6"]
+_data = {
+"RESET": SubResource("Animation_ncufe"),
+"bounce": SubResource("Animation_4fh1u")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gc2u6"]
+radius = 96.0
+
+[node name="Checkpoint" type="Area2D"]
+script = ExtResource("1_wrmht")
+
+[node name="FlagSquare" type="Sprite2D" parent="."]
+modulate = Color(0.662745, 1, 0.541176, 1)
+scale = Vector2(2.14, 2.14)
+texture = ExtResource("1_bw02k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "bounce"
+libraries = {
+"": SubResource("AnimationLibrary_qv4d6")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gc2u6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

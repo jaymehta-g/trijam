@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://85v4ltj8q8kv"]
+[gd_scene load_steps=12 format=3 uid="uid://85v4ltj8q8kv"]
 
 [ext_resource type="Script" path="res://entities/level/objects/bumper/bumper.gd" id="1_egpp8"]
 [ext_resource type="Texture2D" uid="uid://bvb51ijnm8ggg" path="res://entities/level/objects/bumper/ball_red_large.png" id="2_ll3v5"]
@@ -28,6 +28,61 @@ scale_max = 0.15
 scale_curve = SubResource("CurveTexture_so10e")
 color = Color(1, 1, 0, 1)
 
+[sub_resource type="Animation" id="Animation_vp7bx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.865, 1.865)]
+}
+
+[sub_resource type="Animation" id="Animation_s0col"]
+resource_name = "bounce"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0334215, 0.498547),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.901, 1.901), Vector2(3.532, 3.532), Vector2(1.155, 1.155)]
+}
+
+[sub_resource type="Animation" id="Animation_ipn5n"]
+resource_name = "reset"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.155, 1.155), Vector2(1.901, 1.901)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gpsxa"]
+_data = {
+"RESET": SubResource("Animation_vp7bx"),
+"bounce": SubResource("Animation_s0col"),
+"reset": SubResource("Animation_ipn5n")
+}
+
 [node name="Bumper" type="Area2D"]
 script = ExtResource("1_egpp8")
 bounce_force = 300.0
@@ -41,7 +96,7 @@ shape = SubResource("CircleShape2D_mh14u")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="Reset Timer" type="Timer" parent="."]
-wait_time = 0.5
+one_shot = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false
@@ -51,6 +106,11 @@ texture = ExtResource("3_wmtwd")
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gpsxa")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Reset Timer" to="." method="_on_reset_timer_timeout"]
