@@ -8,7 +8,7 @@ class_name Player
 
 var boosting : bool :
 	get:
-		return Input.is_action_pressed("boost")
+		return Input.is_action_pressed("boost") and Globals.game.fuel >= 0
 
 func _ready() -> void:
 	Globals.player=self

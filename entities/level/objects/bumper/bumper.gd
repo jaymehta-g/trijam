@@ -1,14 +1,12 @@
 extends Area2D
 
-const PLAYER_GROUP := "Player"
-
 @onready var reset_timer: Timer = $"Reset Timer"
 @export var bounce_force := 20.0
 @onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 var disabled := false
 
 func _on_body_entered(body: Node2D) -> void:
-	if not body.is_in_group(PLAYER_GROUP):
+	if not body.is_in_group(Globals.PLAYER_GROUP):
 		return
 	if disabled:
 		return

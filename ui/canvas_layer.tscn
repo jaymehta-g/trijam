@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfckefqugexep"]
+
+[ext_resource type="Script" path="res://ui/ui.gd" id="1_dn0ra"]
+[ext_resource type="Texture2D" uid="uid://dmjtyqgu7j8qw" path="res://ui/fuel bar/red_button12.png" id="1_fykdj"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_dn0ra")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 1
+offset_left = 66.0
+offset_top = 48.0
+offset_right = 256.0
+offset_bottom = 93.0
+max_value = 1.0
+step = 0.0
+value = 1.0
+texture_progress = ExtResource("1_fykdj")
